@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
 class Home extends React.Component{
     render(){
-        console.log(this.props);
         return (
             <div>
                 <h1>Redux Saga</h1>
@@ -19,9 +18,11 @@ class Home extends React.Component{
         )
     }
     itemClick(){
+        console.log(this.props);
         this.props.fetchStarWarsRequest()
     }
     planetClick(){
+        console.log(this.props);
         this.props.fetchStarWarsPlanetsRequest()
     }
 }
