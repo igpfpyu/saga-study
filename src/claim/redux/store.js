@@ -9,7 +9,7 @@ const sagaMiddleware=createSagaMiddleware();
 
 export default createStore(
     reducer,
-    applyMiddleware(...sagaMiddleware)
+    applyMiddleware(sagaMiddleware)
 );
 //动态执行saga, 用于applyMiddleware阶段之后执行sagas.返回一个task描述对象；
 //sagaMiddleware.run(saga, ...args)
