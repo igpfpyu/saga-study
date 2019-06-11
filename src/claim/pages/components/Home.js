@@ -8,23 +8,21 @@ class Home extends React.Component{
             <div>
                 <h1>Redux Saga</h1>
                 <div>
-                    {this.props.people.map( (person, i) => <h4 key={i}>{person}</h4>)}
+                    {this.props.people.map( (person, i) => <span key={i}>{person}</span>)}
                 </div>
                 <div>
-                    {this.props.planet.map((planet, i)=><h4 key={i}>{planet}</h4>)}
+                    {this.props.planet.map((planet, i)=><span key={i}>{planet}</span>)}
                 </div>
-                <button onClick={this.props.fetchStarWarsRequest}>Load More</button>
+                <button onClick={()=>this.itemClick()}>Load More</button>
                 <button onClick={()=>this.planetClick()}>load planet</button>
             </div>
         )
     }
     itemClick(){
-        console.log(this.props);
-        console.log(this.props.fetchStarWarsRequest())
+        this.props.fetchStarWarsRequest()
     }
     planetClick(){
-        console.log(this.props);
-        console.log(this.props.fetchStarWarsPlanetsRequest())
+        this.props.fetchStarWarsPlanetsRequest()
     }
 }
 export default connect((state)=>{
