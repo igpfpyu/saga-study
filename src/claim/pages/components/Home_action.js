@@ -8,7 +8,6 @@ export default function* HomeAction(){
     //在发起（dispatch）到 Store 并且匹配 pattern 的每一个 action 上派生一个 saga
     yield takeEvery(types.FETCH_SATR_WARS_REQURES, function* (action){
             try {
-                console.log(action);
                 yield put({
                     type:types.FETCH_SATR_WARS_SUCCESS,
                     data:['a','b', 'c','d', 'f']
@@ -23,7 +22,6 @@ export default function* HomeAction(){
             //put(action); - 发起一个action 到store;
             //action：Object;
             //put是异步的，不会立即发生。
-
             yield put({
                 type:types.FETCH_SATR_WARS_PLANET_SUCCESS,
                 data:["x",'y','z']
