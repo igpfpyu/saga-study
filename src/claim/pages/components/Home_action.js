@@ -10,7 +10,7 @@ export default function* HomeAction(){
             try {
                 yield put({
                     type:types.FETCH_SATR_WARS_SUCCESS,
-                    data:['a','b', 'c','d', 'f']
+                    people:['a','b', 'c','d', 'f']
                 })
             } catch (e) {
                 console.log(e)
@@ -24,7 +24,7 @@ export default function* HomeAction(){
             //put是异步的，不会立即发生。
             yield put({
                 type:types.FETCH_SATR_WARS_PLANET_SUCCESS,
-                data:["x",'y','z']
+                planet:["x",'y','z']
             })
         } catch (e) {
             console.log(e)
