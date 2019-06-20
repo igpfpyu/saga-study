@@ -1,5 +1,6 @@
 import Environment from '../environment/Environment';
-export default ()=>{
+export default (params)=>{
+    console.log(params);
     const host=Environment.host()+ "user";
     return fetch(host,{
         method:"POST",
@@ -11,10 +12,15 @@ export default ()=>{
         console.log(response);
         return response.json();
     }).then(resJSON=>{
-        console.log(resJSON);
-        return resJSON
+        console.log(JSON.stringify(resJSON));
+        console.log('=================resJSON=================')
+        return resJSON;
+        // return Promise.resolve(JSON.stringify(resJSON));
         // return "abc"
-    }).catch(e=>console.log(e));
+    }).catch(err=>{
+        console.log(JSON.stringify(err))
+        return err;
+    });
 }
 //export default {
 //    postNetwork:(TransCode)=>{
