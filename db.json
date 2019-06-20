@@ -1,28 +1,6 @@
 {
-    "user": [
-        {
-            "name": "2123",
-            "phone": "1231313",
-            "email": "igpfpyu@vip.qq.com",
-            "id": "12313",
-            "age": 20,
-            "companyId": 10
-        }, {
-            "name": "2123",
-            "phone": "1231313",
-            "email": "igpfpyu@vip.qq.com",
-            "id": "12313",
-            "age": 12,
-            "companyId": 32
-        }
-    ],
-    "list": [
-        {
-            "name": 1231
-        },{
-            "name": "aaaaa"
-        },{
-            "name": "ccccc"
-        }
-    ]
+  "user": {
+    "a": 2,
+    "b": 3
+  }
 }

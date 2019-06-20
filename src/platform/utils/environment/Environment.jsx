@@ -1,8 +1,8 @@
 const environment="ft";
 export default {
-    host:function(){
+    host(){
         if(environment==='ft'){
-            return window.location.href;
+            return "http://localhost:3000/";
         }else if(environment==="sit"){
             return "";
         }else if(environment==="uat"){
