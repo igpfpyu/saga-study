@@ -44,15 +44,13 @@ export default {
             if(response.ok){
                 return response.json();
             }else{
-                console.log(response.ok);
                 return null;
             }
         }).then(resJSON=>{
             console.log(JSON.stringify(resJSON));
             console.log('=================resJSON=================')
             return Promise.resolve(resJSON);
-            // return Promise.resolve(JSON.stringify(resJSON));
-            // return "abc"
+            // return Promise.resolve(JSON.stringify(resJSON))   使用saga时，这里不能返回字符串；
         }).catch(err=>{
             console.log(JSON.stringify(err))
             return err;
