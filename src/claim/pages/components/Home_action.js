@@ -2,7 +2,9 @@ import * as types from "../../redux/types";
 import {put, call, takeEvery} from 'redux-saga/effects';
 import Network from '../../../platform/utils/network/Network';
 export const fetchStarWarsRequest=()=>({type:types.FETCH_SATR_WARS_REQURES});
+
 export const fetchStarWarsPlanetsRequest=()=>({type:types.FETCH_SATR_WARS_PLANET_REQURES});
+
 function* fetchStr(action){
     const data= yield call(Network, 'abc');
     console.log(data);
