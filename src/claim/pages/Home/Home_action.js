@@ -8,6 +8,7 @@ export const fetchStarWarsPlanetsRequest=()=>({type:types.FETCH_SATR_WARS_PLANET
 
 function* fetchStr(action){
     //action中有事件名和传参。
+    console.log(action.params)
     const data= yield call(Network.postNetwork, action.params);
     console.log(data);
     yield put({

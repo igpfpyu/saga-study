@@ -1,10 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
+import './Home_css.less';
 class Home extends React.Component{
     render(){
+        console.log(this.props);
         return (
-            <div>
+            <div className="pages">
                 <h1>Redux Saga</h1>
                 <div>
                     {this.props.people.map( (person, i) => <p key={i}>{person.name}</p>)}

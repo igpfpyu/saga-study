@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import HomeReducer from '../pages/components/Home_reducer'
+import HomeReducer from '../pages/Home/Home_reducer'
 const rootReducer={
     HomeReducer
 };

@@ -23,6 +23,7 @@ import Environment from '../environment/Environment';
 // }
 export default {
     postNetwork:(params)=>{
+        console.log(params);
         function _fetch(fetch){
             return Promise.race([
                 fetch,
@@ -43,8 +44,6 @@ export default {
             console.log(response);
             if(response.ok){
                 return response.json();
-            }else{
-                return null;
             }
         }).then(resJSON=>{
             console.log(JSON.stringify(resJSON));

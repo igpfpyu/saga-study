@@ -1,5 +1,5 @@
 import {fork} from 'redux-saga/effects';
-import HomeAction from '../pages/components/Home_action';
+import HomeAction from '../pages/Home/Home_action';
 export default function* mySaga(){
     //fork无阻塞的执行fn,不会暂时Generator,分叉，岔路的意思（并发）；
     //yield fork(fn, ...args)的结果是一个Task对象；---task对象，一个具备某些有用的方法和属性的对象。
