@@ -26,8 +26,8 @@ export default {
         function _fetch(fetch){
             return Promise.race([
                 fetch,
-                new Promise(function (resolve, reject) {
-                    setTimeout(() => reject(new Error('网络请求超时，请稍后再试')), 40000);//60秒超时
+                new Promise((resolve, reject)=>{
+                    setTimeout(() => reject(new Error('网络请求超时，请稍后再试')), 60000);//60秒超时
                 })
             ])
         }
