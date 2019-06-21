@@ -7,7 +7,7 @@ class Home extends React.Component{
             <div>
                 <h1>Redux Saga</h1>
                 <div>
-                    {this.props.people.map( (person, i) => <span key={i}>{person}</span>)}
+                    {this.props.people.map( (person, i) => <p key={i}>{person.name}</p>)}
                 </div>
                 <div>
                     {this.props.planet.map((planet, i)=><span key={i}>{planet}</span>)}
@@ -19,7 +19,14 @@ class Home extends React.Component{
     }
     itemClick(){
         console.log(this.props);
-        this.props.fetchStarWarsRequest()
+        let params=[
+            {name:"a"},
+            {name:"b"},
+            {name:"c"},
+            {name:"d"},
+            {name:"e"}
+        ]
+        this.props.fetchStarWarsRequest(params)
     }
     planetClick(){
         console.log(this.props);

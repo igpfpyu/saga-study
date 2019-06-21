@@ -1,26 +1,57 @@
 import Environment from '../environment/Environment';
-export default (params)=>{
-    console.log(params);
-    const host=Environment.host()+ "user";
-    return fetch(host,{
-        method:"POST",
-        headers:{
-            "Content-type":"application/json",
-        },
-        body:JSON.stringify({a:2,b:3}),
-    }).then(response=>{
-        console.log(response);
-        return response.json();
-    }).then(resJSON=>{
-        console.log(JSON.stringify(resJSON));
-        console.log('=================resJSON=================')
-        return resJSON;
-        // return Promise.resolve(JSON.stringify(resJSON));
-        // return "abc"
-    }).catch(err=>{
-        console.log(JSON.stringify(err))
-        return err;
-    });
+// export default (params)=>{
+//     const host=Environment.host()+ "user";
+//     return fetch(host,{
+//         method:"POST",
+//         headers:{
+//             "Content-type":"application/json",
+//         },
+//         body:JSON.stringify(params),
+//     }).then(response=>{
+//         console.log(response);
+//         return response.json();
+//     }).then(resJSON=>{
+//         console.log(JSON.stringify(resJSON));
+//         console.log('=================resJSON=================')
+//         return Promise.resolve(resJSON);
+//         // return Promise.resolve(JSON.stringify(resJSON));
+//         // return "abc"
+//     }).catch(err=>{
+//         console.log(JSON.stringify(err))
+//         return err;
+//     });
+// }
+export default {
+    postNetwork:(params)=>{
+        function _fetch(fetch){
+            return Promise.race([
+                fetch,
+                new Promise(function (resolve, reject) {
+                    setTimeout(() => reject(new Error('网络请求超时，请稍后再试')), 40000);//60秒超时
+                })
+            ])
+        }
+        const host=Environment.host()+ "user";
+        return _fetch(fetch(host,{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json",
+            },
+            body:JSON.stringify(params),
+        }).then(response=>{
+            console.log(response);
+            return response.json();
+        }).then(resJSON=>{
+            console.log(JSON.stringify(resJSON));
+            console.log('=================resJSON=================')
+            return Promise.resolve(resJSON);
+            // return Promise.resolve(JSON.stringify(resJSON));
+            // return "abc"
+        }).catch(err=>{
+            console.log(JSON.stringify(err))
+            return err;
+        }));
+    }
 }
 //export default {
 //    postNetwork:(TransCode)=>{

@@ -1,16 +1,18 @@
 import * as types from "../../redux/types";
 import {put, call, takeEvery} from 'redux-saga/effects';
 import Network from '../../../platform/utils/network/Network';
-export const fetchStarWarsRequest=()=>({type:types.FETCH_SATR_WARS_REQURES});
+//事件action
+export const fetchStarWarsRequest=(params)=>({type:types.FETCH_SATR_WARS_REQURES,params});
 
 export const fetchStarWarsPlanetsRequest=()=>({type:types.FETCH_SATR_WARS_PLANET_REQURES});
 
 function* fetchStr(action){
-    const data= yield call(Network, 'abc');
+    //action中有事件名和传参。
+    const data= yield call(Network.postNetwork, action.params);
     console.log(data);
     yield put({
         type:types.FETCH_SATR_WARS_SUCCESS,
-        people:[data.a, 'ccc','ddd']
+        people:data
     })
 }
 export default function* HomeAction(){
