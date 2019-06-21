@@ -53,9 +53,8 @@ export default {
             // return Promise.resolve(JSON.stringify(resJSON))   使用saga时，这里不能返回字符串；
         }).catch(err=>{
             console.log(JSON.stringify(err))
-            return err;
+            return Promise.reject(err);
         }));
-
     }
 }
 //export default {
