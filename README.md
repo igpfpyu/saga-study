@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React Home](https://github.com/facebook/create-react-app).
-
+##关于添加LESS;
+首先，npm install less less-loader --save;
+然    在config > webpack.config.js 中把所有SASS替换在less就OK；
 ## Available Scripts
 
 In the project directory, you can run:
