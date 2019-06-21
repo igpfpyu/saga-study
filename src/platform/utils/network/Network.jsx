@@ -36,11 +36,17 @@ export default {
             method:"POST",
             headers:{
                 "Content-type":"application/json",
+                "credentials": 'include'
             },
             body:JSON.stringify(params),
         }).then(response=>{
             console.log(response);
-            return response.json();
+            if(response.ok){
+                return response.json();
+            }else{
+                console.log(response.ok);
+                return null;
+            }
         }).then(resJSON=>{
             console.log(JSON.stringify(resJSON));
             console.log('=================resJSON=================')
@@ -51,6 +57,7 @@ export default {
             console.log(JSON.stringify(err))
             return err;
         }));
+
     }
 }
 //export default {
