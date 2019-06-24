@@ -8,11 +8,11 @@ import 'antd/dist/antd.min.css';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
+    <BrowserRouter>
+        <Provider store={store}>
             <App />
-        </BrowserRouter>
-    </Provider>,
+        </Provider>
+    </BrowserRouter>,
     document.getElementById('root')
 );
 serviceWorker.unregister();

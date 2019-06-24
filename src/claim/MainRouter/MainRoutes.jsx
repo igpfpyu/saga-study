@@ -6,9 +6,9 @@ export default class MainRoutes extends React.Component{
     render(){
         return (
             <Switch>
-                <Route path="/index" component={Home} />
+                <Route path="/" exact component={Home} />
                 <Route path="/404" component={Error} />
-                <Redirect to="/index" />
+                <Redirect to="/404" />
             </Switch>
         )
     }

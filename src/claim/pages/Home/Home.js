@@ -1,22 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
+import { Layout } from 'antd';
+
+//头部导航
+import TopMenu from '../../components/TopMenu/TopMenu';
 import './Home_css.less';
+const { Content, Sider } = Layout;
+
 class Home extends React.Component{
     render(){
-        console.log(this.props);
         return (
-            <div className="pages">
-                <h1>Redux Saga</h1>
-                <div>
-                    {this.props.people.map( (person, i) => <p key={i}>{person.name}</p>)}
-                </div>
-                <div>
-                    {this.props.planet.map((planet, i)=><span key={i}>{planet}</span>)}
-                </div>
-                <button onClick={()=>this.itemClick()}>Load More</button>
-                <button onClick={()=>this.planetClick()}>load planet</button>
-            </div>
+            <Layout className="pages">
+                <TopMenu></TopMenu>
+                <Layout>
+                    <Sider></Sider>
+                    <Content>Content</Content>
+                </Layout>
+
+            </Layout>
         )
     }
     itemClick(){
