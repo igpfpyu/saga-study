@@ -2,7 +2,7 @@ const environment="ft";
 export default {
     host(){
         if(environment==='ft'){
-            return "http://localhost:3001/";
+            return "";
         }else if(environment==="sit"){
             return "";
         }else if(environment==="uat"){

@@ -32,7 +32,7 @@ export default {
                 })
             ])
         }
-        const host=Environment.host()+ "user";
+        const host=Environment.host();
         return _fetch(fetch(host,{
             method:"POST",
             headers:{
@@ -42,12 +42,13 @@ export default {
             body:JSON.stringify(params),
         }).then(response=>{
             console.log(response);
+            console.log('=================response=================');
             if(response.ok){
                 return response.json();
             }
         }).then(resJSON=>{
             console.log(JSON.stringify(resJSON));
-            console.log('=================resJSON=================')
+            console.log('=================resJSON=================');
             return Promise.resolve(resJSON);
             // return Promise.resolve(JSON.stringify(resJSON))   使用saga时，这里不能返回字符串；
         }).catch(err=>{

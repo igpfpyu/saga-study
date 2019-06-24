@@ -4,10 +4,10 @@ const initialState={
     planet:[],
 }
 const handleStarWarsFetchSuccess=(state, action)=>{
-    let newPeople=state.people.concat(action.people)
+    console.log(action.people);
     return {
         ...state,
-        people:newPeople
+        people:action.people
     }
 }
 const handleStarWarsPlanetFetchSuccess=(state, action)=>{
