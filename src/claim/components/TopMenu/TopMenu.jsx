@@ -20,7 +20,7 @@ export default class TopMenu extends React.Component{
                           selectedKeys={[this.state.current]}
                           mode="horizontal">
                         {
-                            NavList.map((item, index) =><Menu.Item key={item.id}>{item.name}</Menu.Item>)
+                            NavList.map((item, index) =><Menu.Item key={item.id}><NavLink to={item.url}>{item.name}</NavLink></Menu.Item>)
                         }
                     </Menu>
                 </div>
@@ -47,6 +47,7 @@ export default class TopMenu extends React.Component{
 
     }
     handleClick(e){
+        console.log(e);
             this.setState({
                 current:e.key
             })

@@ -1,22 +1,18 @@
 import React from 'react';
+import { Redirect, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
 import { Layout } from 'antd';
 
-//头部导航
-import TopMenu from '../../components/TopMenu/TopMenu';
 import './Home_css.less';
 const { Content, Sider } = Layout;
 
 class Home extends React.Component{
     render(){
         return (
-            <Layout className="pages">
-                <TopMenu></TopMenu>
-                <Layout>
-                    <Sider></Sider>
-                    <Content>Content</Content>
-                </Layout>
+            <Layout>
+                <Sider></Sider>
+                <Content>INdex</Content>
             </Layout>
         )
     }
