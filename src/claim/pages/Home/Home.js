@@ -17,7 +17,6 @@ class Home extends React.Component{
                     <Sider></Sider>
                     <Content>Content</Content>
                 </Layout>
-
             </Layout>
         )
     }
