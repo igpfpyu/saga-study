@@ -1,23 +1,20 @@
 import React from 'react';
-import { Redirect, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
 import { Layout } from 'antd';
-
 import './Home_css.less';
-const { Content, Sider } = Layout;
-
+import NavSider from "../../MainRouter/NavSider/NavSider";
+const { Content } = Layout;
 class Home extends React.Component{
     render(){
         return (
             <Layout>
-                <Sider></Sider>
+                <NavSider />
                 <Content>INdex</Content>
             </Layout>
         )
     }
     itemClick(){
-        console.log(this.props);
         let params=[
             {name:"a"},
             {name:"b"},
