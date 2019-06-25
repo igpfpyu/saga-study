@@ -1,17 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as HomeAction from './Home_action';
-import { Layout } from 'antd';
 import './Home_css.less';
-import NavSider from "../../MainRouter/NavSider/NavSider";
-const { Content } = Layout;
 class Home extends React.Component{
     render(){
         return (
-            <Layout>
-                <NavSider />
-                <Content>INdex</Content>
-            </Layout>
+            <div>Home</div>
         )
     }
     itemClick(){

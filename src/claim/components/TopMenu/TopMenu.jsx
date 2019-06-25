@@ -1,6 +1,6 @@
 import React from 'react';
 import {Layout, Menu, Button, Dropdown} from 'antd';
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import './TopMenu.less';
 import NavList from './TopMenu_data';
 const { Header} = Layout;
@@ -15,12 +15,12 @@ export default class TopMenu extends React.Component{
         return (
             <Header className="top-header">
                 <div className="header-left">
-                    <NavLink to="" className="logo">LOGO</NavLink>
+                    <Link to="" className="logo">LOGO</Link>
                     <Menu onClick={(e)=>this.handleClick(e)}
                           selectedKeys={[this.state.current]}
                           mode="horizontal">
                         {
-                            NavList.map((item, index) =><Menu.Item key={item.id}><NavLink to={item.url}>{item.name}</NavLink></Menu.Item>)
+                            NavList.map((item, index) =><Menu.Item key={item.id}><Link to={item.url}>{item.name}</Link></Menu.Item>)
                         }
                     </Menu>
                 </div>
