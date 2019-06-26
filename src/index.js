@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './claim/redux/store';
@@ -9,11 +8,11 @@ import {BrowserRouter} from 'react-router-dom';
 import 'antd/dist/antd.min.css';
 import './index.less';
 ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
+    <Provider store={store}>
+        <BrowserRouter keyLength={12}>
             <App />
-        </Provider>
-    </BrowserRouter>,
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
 );
 serviceWorker.unregister();

@@ -2,11 +2,11 @@ export default {
     indexNav:[
         {
             title:"待完成列表", id:"1000", chids:[
-                {title:"面授录入",url:"/", id:"1001", chids:[]},
-                {title:"面授管理",url:"/give",  id:"1002", chids:[]},
-                {title:"面授审核", url:"/giveMessage", id:"1003", chids:[]},
-                {title:"面授报名审批",url:"/giveMessage",  id:"1004", chids:[]},
-                {title:"讲师面授管理",url:"/giveMessage",  id:"1005", chids:[]}
+                {title:"面授录入",url:"/lesson", id:"1001", chids:[]},
+                {title:"面授管理",url:"/lesson/message",  id:"1002", chids:[]},
+                {title:"面授审核", url:"/lesson/giveMessage", id:"1003", chids:[]},
+                {title:"面授报名审批",url:"/lesson/giveMessage",  id:"1004", chids:[]},
+                {title:"讲师面授管理",url:"/lesson/giveMessage",  id:"1005", chids:[]}
             ]
         }, {
             title:"评估表", id:"1100",chids:[
