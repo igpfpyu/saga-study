@@ -1,5 +1,9 @@
 export default {
-    indexNav:[
+    indexNavs:[
+        {title:"在线课程", url:"/index", id:"0001"},
+        {title:"课程管理", url:"/index/give-message", id:"0002"}
+    ],
+    lessonNavs:[
         {
             title:"待完成列表", id:"1000", chids:[
                 {title:"面授录入",url:"/lesson", id:"1001", chids:[]},

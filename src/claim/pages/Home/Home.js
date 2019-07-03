@@ -6,6 +6,8 @@ import HomePage from "./HomePage/HomePage";
 import {Menu, Icon, Layout} from "antd";
 import './Home_css.less';
 import HomeMessage from "./HomeMessage/HomeMessage";
+import LeftRouters from "../../MainRouter/LeftRouters/LeftRouters";
+import NavData from "./Home_data";
 const {Content, Sider}=Layout;
 const {SubMenu}=Menu;
 class Home extends React.Component{
@@ -15,13 +17,7 @@ class Home extends React.Component{
         return (
             <Layout>
                 <Sider>
-                    <Menu className="menu_nav" mode="inline"
-                          defaultSelectedKeys={['1001']}
-                          defaultOpenKeys={['1000']}>
-                        {/*{this.navView(NavData) }*/}
-                        <Menu.Item><NavLink to="/index">在线课程</NavLink></Menu.Item>
-                        <Menu.Item><NavLink to={`/index/give-message`}>课程管理</NavLink></Menu.Item>
-                    </Menu>
+                    <LeftRouters navData={NavData.indexNavs} />
                 </Sider>
                 <Content>
                     <Switch>

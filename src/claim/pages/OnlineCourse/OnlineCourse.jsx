@@ -31,7 +31,7 @@ export default class OnlineCourse extends React.Component{
         return (
             <Layout>
                 <Sider>
-                    <LeftRouters navData={NavData} />
+                    <LeftRouters navData={NavData.lessonNavs} />
                     {/*<Menu className="menu_nav" mode="inline"*/}
                     {/*defaultSelectedKeys={['1001']}*/}
                     {/*defaultOpenKeys={['1000']}>*/}

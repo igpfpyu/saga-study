@@ -9,7 +9,6 @@ export default class LeftRouters extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            now:0
         }
     }
     componentDidMount() {
@@ -17,25 +16,24 @@ export default class LeftRouters extends React.Component{
     }
 
     render(){
-        let {indexNav}=this.props.navData;
+        let navData=this.props.navData;
         return (
             <Menu className="menu_nav" mode="inline"
-                  defaultSelectedKeys={[indexNav[0].chids[0].id]}
+                  defaultSelectedKeys={[navData[0].chids && navData[0].chids.length>0?  navData[0].chids[0].id: null ]}
                   selectedKeys={[window.location.pathname]}
-                  defaultOpenKeys={[indexNav[0].id]}>
-                { this.navView(indexNav) }
+                  defaultOpenKeys={[navData[0].id]}>
+                { this.navView(navData) }
             </Menu>
         );
     }
-    navView(indexNav){
-        console.log(indexNav);
-        return indexNav.map((navItem, index)=>{
-            if(navItem.chids.length>0){
+    navView(navData){
+        console.log(navData);
+        return navData.map((navItem, index)=>{
+            if(navItem.chids && navItem.chids.length>0){
                 return (
                     <SubMenu key={navItem.id} title={ <span>{navItem.title}</span>}>
                         {
                             navItem.chids.map((childItem, index)=>{
-                                console.log(childItem.url);
                                 return (
                                     <Menu.Item key={childItem.url}>
                                         <NavLink to={childItem.url}>{childItem.title}</NavLink>
