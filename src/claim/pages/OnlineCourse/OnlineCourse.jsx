@@ -4,7 +4,7 @@ import {Route, Switch} from "react-router";
 import OnlineCoursePage from "./OnlineCoursePage/OnlineCoursePage";
 import {NavLink} from "react-router-dom";
 import OnlineCourseMessage from "./OnlineCourseMessage/OnlineCourseMessage";
-import NavData from "../Home/Home_data";
+import NavData from "../../MainRouter/Navigation/Navigation";
 import LeftRouters from "../../MainRouter/LeftRouters/LeftRouters";
 const {Sider, Content}=Layout;
 const {SubMenu}=Menu;

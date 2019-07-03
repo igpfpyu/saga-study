@@ -7,7 +7,7 @@ import {Menu, Icon, Layout} from "antd";
 import './Home_css.less';
 import HomeMessage from "./HomeMessage/HomeMessage";
 import LeftRouters from "../../MainRouter/LeftRouters/LeftRouters";
-import NavData from "./Home_data";
+import NavData from "../../MainRouter/Navigation/Navigation";
 const {Content, Sider}=Layout;
 const {SubMenu}=Menu;
 class Home extends React.Component{

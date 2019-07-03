@@ -9,10 +9,10 @@ function* fetchStr(action){
     //action中有事件名和传参。
     console.log(action.params)
     // const data= yield call(Network.postNetwork, action.params);
-    const data=require('./Home_data');
+    // const data=require('./Home_data');
     yield put({
         type:types.FETCH_SATR_WARS_SUCCESS,
-        people:data.user
+        people:""
     })
 };
 function* planetFetch(){
