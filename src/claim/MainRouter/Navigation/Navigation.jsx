@@ -1,8 +1,10 @@
 export default {
+    //首页
     indexNavs:[
         {title:"在线课程", url:"/index", id:"0001"},
         {title:"课程管理", url:"/index/give-message", id:"0002"}
     ],
+    //在线课程
     lessonNavs:[
         {
             title:"待完成列表", id:"1000", chids:[
@@ -34,5 +36,27 @@ export default {
         //         {title:"目录管理", url:"/", id:"1304", chids:[]},
         //     ]
         // }
+    ],
+    coachNavs:[
+        {id:"2000", title:'面授管理', chids:[
+                {id:"1000", title:'面授管理', url:'/facem'},
+                {id:"1001", title:'面授录入', url:'/facem/fimport'},
+                {id:"1002", title:'面授目录', url:'/facem/facemCatalog'},
+                {id:"1003", title:'面授报名审核', url:'/facem/fauditEnroll'}
+            ]},
+        {id:"2100", title:'评估表', chids:[
+                {id:"2001", title:'评估表管理', url:'/assess/main'},
+                {id:"2002", title:'评估表录入', url:'/assess/aimport'},
+                {id:"2003", title:'评估表目录', url:'/assess/acatalog'},
+            ]
+        },
+        {id:"2200", title:'讲师管理', chids:[
+                {id:"2001", title:'讲师管理', url:'/lecturer/main' },
+                {id:"2002", title:'讲师课程管理', url:'/lecturer/courses'},
+                {id:"2003", title:'讲师等级管理', url:'/lecturer/levelManager'},
+                {id:"2004", title:'讲师目录', url:'/lecturer/fmain'},
+            ]
+        },
+        {id:"2300", title:'面授课程',url:"/kldjsf"},
     ]
 }
