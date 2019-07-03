@@ -8,8 +8,11 @@ export default class TopMenu extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            current:"1010"
+            current:"/"+window.location.pathname.split('/')[1]
         }
+    }
+    componentDidMount() {
+        console.log(window.location.pathname.split('/'));
     }
     render(){
         return (
@@ -20,7 +23,7 @@ export default class TopMenu extends React.Component{
                           selectedKeys={[this.state.current]}
                           mode="horizontal">
                         {
-                            NavList.map((item, index) =><Menu.Item key={item.id}><Link to={item.url}>{item.name}</Link></Menu.Item>)
+                            NavList.map((item, index) =><Menu.Item key={item.url}><Link to={item.url}>{item.name}</Link></Menu.Item>)
                         }
                     </Menu>
                 </div>

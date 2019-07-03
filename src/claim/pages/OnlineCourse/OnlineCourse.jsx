@@ -1,12 +1,11 @@
 import React from 'react';
-import {Icon, Layout, Menu} from "antd";
+import {Layout, Menu} from "antd";
 import {Route, Switch} from "react-router";
-import Home from "../Home/Home";
-import GiveMessage from "../GiveMessage/GiveMessage";
 import OnlineCoursePage from "./OnlineCoursePage/OnlineCoursePage";
 import {NavLink} from "react-router-dom";
 import OnlineCourseMessage from "./OnlineCourseMessage/OnlineCourseMessage";
 import NavData from "../Home/Home_data";
+import LeftRouters from "../../MainRouter/LeftRouters/LeftRouters";
 const {Sider, Content}=Layout;
 const {SubMenu}=Menu;
 export default class OnlineCourse extends React.Component{
@@ -29,15 +28,15 @@ export default class OnlineCourse extends React.Component{
     }
     render(){
         let {match}=this.props;
-        console.log(match.url)
         return (
             <Layout>
                 <Sider>
-                    <Menu className="menu_nav" mode="inline"
-                    defaultSelectedKeys={['1001']}
-                    defaultOpenKeys={['1000']}>
-                    {this.navView(NavData) }
-                    </Menu>
+                    <LeftRouters navData={NavData} />
+                    {/*<Menu className="menu_nav" mode="inline"*/}
+                    {/*defaultSelectedKeys={['1001']}*/}
+                    {/*defaultOpenKeys={['1000']}>*/}
+                    {/*    {this.navView(NavData) }*/}
+                    {/*</Menu>*/}
                     {/*<NavLink to="/lesson">在线课程</NavLink>*/}
                     {/*<NavLink to="/lesson/message">课程管理</NavLink>*/}
                 </Sider>

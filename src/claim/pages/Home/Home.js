@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import NavData from "./Home_data";
 import * as HomeAction from './Home_action';
-import {NavLink, Switch, Route, Redirect} from "react-router-dom";
+import {NavLink, Switch, Route} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import {Menu, Icon, Layout} from "antd";
 import './Home_css.less';
