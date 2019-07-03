@@ -1,11 +1,11 @@
 import {fork} from 'redux-saga/effects';
-import HomeAction from '../pages/Home/Home_action';
+import HomePageActive from '../pages/Home/HomePage/HomePage_action'
 export default function* mySaga(){
     //fork无阻塞的执行fn,不会暂时Generator,分叉，岔路的意思（并发）；
     //yield fork(fn, ...args)的结果是一个Task对象；---task对象，一个具备某些有用的方法和属性的对象。
     //fn generator函数，或者返回Promise的普通函数；
     //args：一个数组，作为fn的参数；
-    yield fork(HomeAction)
+    yield  fork(HomePageActive);
     // yield all([
     //     takeLatest(types.FETCH_SATR_WARS_REQURES, fetchPerson),
     //     takeLatest(types.FETCH_SATR_WARS_PLANET_REQURES,fetchPlanets)

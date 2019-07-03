@@ -1,16 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as HomeAction from './Home_action';
 import {NavLink, Switch, Route} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import {Menu, Icon, Layout} from "antd";
-import './Home_css.less';
 import HomeMessage from "./HomeMessage/HomeMessage";
 import LeftRouters from "../../MainRouter/LeftRouters/LeftRouters";
 import NavData from "../../MainRouter/Navigation/Navigation";
 const {Content, Sider}=Layout;
 const {SubMenu}=Menu;
-class Home extends React.Component{
+export default class Home extends React.Component{
     render(){
         const {match}=this.props;
         console.log(this.props.match.url);
@@ -68,6 +65,3 @@ class Home extends React.Component{
         this.props.fetchStarWarsPlanetsRequest()
     }
 }
-export default connect((state)=>{
-    return state.HomeReducer;
-}, HomeAction)(Home);

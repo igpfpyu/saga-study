@@ -1,0 +1,2 @@
+export const ITEM_CLICK="ITEM_CLICK";
+export const ITEM_CLICK_SUCCESS="ITEM_CLICK_SUCCESS";
