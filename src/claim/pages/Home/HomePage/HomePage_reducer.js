@@ -1,8 +1,8 @@
-import * as types from './HomePage_type';
+import * as types from '../HomePage_type';
 const initial={
         item:""
 };
-const  handleStarWarsFetchSuccess=(state, action)=>{
+const handleStarWarsFetchSuccess=(state, action)=>{
         console.log(state, action);
     return {
         ...state,
